@@ -1,0 +1,143 @@
+body{
+    background: rgba(0,0,0,0.9);
+    margin:0;
+    color: white;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+}
+
+.header-content h3, .header-content p {
+    color: black;
+}
+
+.header::after{
+    content: "";
+    height: 100vh;
+    width: 100%;
+    background-image: url(img3/escritoriotrabajo.jpg );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.header:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.header:hover .header-content{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.header-content{
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    transition: all 1000ms;
+}
+
+.title{
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.text, p{
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    line-height: 1.5;
+    margin-top: 0.5em;
+}
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 3em 1em;
+}
+
+.grid-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /** o repeat(3, 1fr); o 30px 30px 30px**/
+    grid-gap: 20px;
+}
+
+.grid-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /** o 30px 30px 30px**/
+    grid-gap: 20px;
+}
+
+.text-center{
+    text-align: center;
+    margin: auto;
+}
+
+.bg-light{
+    background: white;
+    color: #333
+}
+
+.bg-dark{
+    background: #2f3542;
+    color: white;
+}
+
+.services{
+    padding: 2em;
+}
+
+.footer{
+    padding: 1em;
+}
+
+.footer p{
+    margin: 0;
+}
+
+@media screen and (max-width: 560px){
+    .header::after{
+        height: 50vh;
+        width: 100%;
+    }
+    .header-content{
+        top: 5%;
+        margin-top: 5px;
+    }
+    .header-content img{
+        height: 120px;
+        width: 120px;
+        border-radius: 15px;
+    }
+    .header-content .text{
+        display: none;
+    }
+    .grid-3, .grid-2{
+        grid-template-columns: 1fr;
+    }
+    .services{
+        padding: 1em 1em;
+    }
+}
+
+@media screen and (max-height: 500px){
+    .header-content .text{
+        display: none;
+    }
+    .header-content{
+        top: -20px;
+    }
+}
